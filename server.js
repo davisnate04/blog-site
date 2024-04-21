@@ -11,7 +11,7 @@ const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 5000;
 
 const sess = {
     secret: "jA993<p=:=aU",
@@ -35,5 +35,5 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(process.env.PORT || PORT, () => console.log(`Now listening on localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`Now listening on localhost:${PORT}`));
 });
