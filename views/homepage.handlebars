@@ -1,0 +1,47 @@
+<div class="body">
+<ul class="homepageBody">
+{{#each posts}}
+<li data-id="{{id}}">
+  <div>
+    <div class="boxModelTitle">
+      <h3 class="postTitle">{{title}}</h3>
+      <h3 class="author">Posted By
+        {{user.username}}
+        on
+        {{format_date createdAt}}</h3>
+    </div>
+    <div class="post">
+      <p class="homepagePost">{{post}}</p>
+    </div>
+  </div>
+  <div class="comment visible">
+    <div class="commentModelTitle">
+    </div>
+    <div class="commentModel">
+      {{#if ../logged_in}}
+      <form>
+        <div>
+          <p>Comment</p>
+          <textarea class="content commentContent"></textarea>
+        </div>
+        <div>
+            <input class="submit commentSubmit" value="Submit" type="button">
+        </div>
+      </form>
+      {{/if}}
+      <div>
+        {{#each comments}}
+        <div class="postComment">
+          <hr>
+          <p>{{comment}}</p>
+          <p>-{{user.username}}, {{format_date createdAt}}</p>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</li>
+{{/each}}
+</ul>
+<script src="/js/mainpage.js"></script>
+</div>

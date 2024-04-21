@@ -1,0 +1,52 @@
+<div class="body">
+  <div class="boxModel visible" id="newPostTitle">
+    <div class="boxModelTitle">
+      <h3>Create New Post</h3>
+    </div>
+    <form class="input-body" id="createPost">
+      <div>
+        <label>Title</label>
+        <textarea id="createTitle" class="title"></textarea>
+      </div>
+      <div>
+        <label>Content</label>
+        <textarea id="createContent" class="content"></textarea>
+      </div>
+      <div>
+        <input id="createSubmit" class="submit" value="Create" type="submit">
+      </div>
+    </form>
+  </div>
+  <div class="boxModel visible" id="updatePostTitle">
+    <div class="boxModelTitle">
+      <h3>Update Post</h3>
+    </div>
+    <form class="input-body" id="updatePost">
+      <div>
+        <label>Title</label>
+        <textarea id="updateTitle" class="title"></textarea>
+      </div>
+      <div>
+        <label>Content</label>
+        <textarea id="updateContent" class="content"></textarea>
+      </div>
+      <div>
+        <input id="updateSubmit" class="submit" value="Update Post" type="button">
+      </div>
+      <div>
+        <input id="deleteSubmit" class="submit" value="Delete" type="button">
+      </div>
+    </form>
+  </div>
+  <div>
+    <ul id="listBody">
+      {{#each dashboardPosts as |post|}}
+      {{> dashboard-posts}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+<div id="newPostBody">
+    <input type="button" value="+ New Post" id="newPost">
+</div>
+<script src="/js/newPost.js"></script>
