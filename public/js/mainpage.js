@@ -1,6 +1,7 @@
 const titles = document.querySelectorAll(".postTitle");
 const comments = document.querySelectorAll(".comment");
 
+// This will only allow you open one comment section, instead of stacking them
 const openTitle = (event) => {
     const li = event.currentTarget.closest("li");
     const liChild = li.children[1];
@@ -15,7 +16,7 @@ const openTitle = (event) => {
         liChild.classList.remove("visible");
     }
 }
-
+// Creates a comment
 const createComment = async (event) => {
     let post_id = event.currentTarget.closest("li").dataset.id;
     let comment = event.currentTarget.closest("form")[0].value;
