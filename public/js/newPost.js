@@ -1,5 +1,6 @@
 const listBody = document.querySelector("#listBody");
 
+// Adds a new post
 const newPost = async (event) => {
   event.preventDefault();
 
@@ -24,6 +25,7 @@ const newPost = async (event) => {
   }
 };
 
+// Opens the post when you click on it
 const openPost = () => {
   const newPostTitle = document.querySelector("#newPostTitle");
   const newPost = document.querySelector("#newPost");
@@ -33,6 +35,7 @@ const openPost = () => {
   listBody.classList.toggle("visible");
 };
 
+// Updates the post
 const updatePost = async (id) => {
   const title = document.querySelector("#updateTitle").value.trim();
   const content = document.querySelector("#updateContent").value.trim();
@@ -52,6 +55,7 @@ const updatePost = async (id) => {
   }
 };
 
+// Adds functionality to the buttons
 const updatePostInfo = async (id) => {
   const updatePostTitle = document.querySelector("#updatePostTitle");
   const newPost = document.querySelector("#newPost");
@@ -99,6 +103,7 @@ const updatePostInfo = async (id) => {
   }
 };
 
+// Loads the post on the dashboard
 const pageLoad = () => {
   const buttons = document.querySelectorAll(".dashboardButton");
 
@@ -113,6 +118,7 @@ const pageLoad = () => {
   }
 };
 
+// Deletes the post
 const deletePost = async (id) => {
   const response = await fetch("/api/post/deletePost", {
     method: "DELETE",
